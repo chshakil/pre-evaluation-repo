@@ -1,0 +1,38 @@
+package com.example.pre.evaluation.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.pre.evaluation.model.Academic;
+import com.example.pre.evaluation.service.AcademicService;
+
+@RestController
+@RequestMapping("/api")
+public class AcademicController {
+
+	@Autowired
+	private AcademicService service;
+
+	@PostMapping("/addAcademic")
+	public Academic saveAcademic(@RequestBody Academic academic) {
+		return service.createAcademic(academic);
+	}
+
+	@PostMapping("/addAcademics")
+	public List<Academic> saveAcademics(@RequestBody List<Academic> aList) {
+		return service.creAcademics(aList);
+	}
+
+	@GetMapping("/academics")
+	public List<Academic> getAllAcademics() {
+		return service.getAcademics();
+	}
+	
+	
+}

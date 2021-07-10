@@ -1,0 +1,77 @@
+package com.example.demo.model;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Student {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int std_id;
+	private String name;
+	private String email;
+	private String text;
+
+	@OneToMany(targetEntity = Academic.class, cascade = CascadeType.ALL)
+	private List<Academic> academics;
+
+	public Student() {
+
+	}
+
+	public Student(String name, String email, String text, List<Academic> academics) {
+		this.name = name;
+		this.email = email;
+		this.text = text;
+		this.academics = academics;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public List<Academic> getAcademics() {
+		return academics;
+	}
+
+	public void setAcademics(List<Academic> academics) {
+		this.academics = academics;
+	}
+
+}

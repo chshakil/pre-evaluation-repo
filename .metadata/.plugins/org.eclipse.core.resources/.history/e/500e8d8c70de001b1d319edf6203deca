@@ -1,0 +1,23 @@
+package com.example.pre.evaluation.model;
+
+import java.util.Date;
+
+public class Student {
+	private int id;
+	private int reg_id;
+	private int institution_id;
+	private String first_name;
+	private String last_name;
+	private String email;
+	private Date reg_date;
+	private Date date_of_birth;
+	private int age;
+	private String gender;
+	private int nid;
+	private String occupation;
+	private int home_contact;
+	private int std_contact;
+	private String photo;
+	private String created_on;
+	private String created_by;
+}

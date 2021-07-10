@@ -1,0 +1,57 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.StudentInfo;
+import com.example.demo.model.repository.service.StudentService;
+
+@RestController
+public class StudentInfoController {
+
+	@Autowired
+	private StudentService service;
+
+	@PostMapping("/addStudent")
+	public StudentInfo addStudentInfo(@RequestBody StudentInfo sInfo) {
+		return service.saveStudentInfo(sInfo);
+	}
+
+	@PostMapping("/addStudents")
+	public List<StudentInfo> addStudentInfos(@RequestBody List<StudentInfo> sInfos) {
+		return service.saveStudentInfos(sInfos);
+	}
+
+	@GetMapping("/students")
+	public List<StudentInfo> getAllStudent() {
+		return service.getStudentInfo();
+	}
+
+	@GetMapping("/student/{id}")
+	public StudentInfo getStudentById(@PathVariable int id) {
+		return service.getStudentInfoById(id);
+	}
+
+	@DeleteMapping("/delete/{id}")
+	public String deleteStudentById(@PathVariable int id) {
+		return service.deleteStudentById(id);
+	}
+
+	public void deletedStudent(StudentInfo studentInfo) {
+		service.deletedAll(studentInfo);
+	}
+
+	@PutMapping("/update")
+	public StudentInfo updateStudentInfo(@RequestBody StudentInfo sInfo) {
+		return service.updateStudentInfo(sInfo);
+	}
+
+}

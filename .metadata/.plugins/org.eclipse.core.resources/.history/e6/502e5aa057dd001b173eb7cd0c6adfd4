@@ -1,0 +1,386 @@
+package com.example.demo.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.lang.NonNull;
+
+@Entity
+@Table(name = "student_info")
+public class StudentInfo {
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@NonNull
+	@Column(name = "std_id")
+	private int stdId;
+
+	@Id
+	@Column(name = "reg_id")
+	private int regId;
+
+	@Column(name = "institution_id")
+	private int instituteId;
+
+	@Column(name = "first_name")
+	private String firstName;
+
+	@Column(name = "last_name")
+	private String lastName;
+
+	@Column(name = "reg_date")
+	private String regDate;
+
+	@Column(name = "std_dob")
+	private String dateOfBirth;
+
+	@Column(name = "age")
+	private int age;
+
+	@Column(name = "gender")
+	private String gender;
+
+	@Column(name = "nid")
+	private int nid;
+
+	@Column(name = "occupation")
+	private String occupation;
+
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "photo")
+	private int photo;
+
+	@Column(name = "present_street")
+	private String pre_street;
+
+	@Column(name = "present_po")
+	private String pre_po;
+
+	@Column(name = "present_upa")
+	private String pre_upa;
+
+	@Column(name = "present_dist")
+	private String pre_dis;
+
+	@Column(name = "present_div")
+	private String pre_div;
+
+	@Column(name = "permanent_street")
+	private String per_street;
+
+	@Column(name = "permanent_po")
+	private String per_po;
+
+	@Column(name = "permanent_upa")
+	private String per_upa;
+
+	@Column(name = "permanent_dist")
+	private String per_dis;
+
+	@Column(name = "permanent_div")
+	private String per_div;
+
+	@Column(name = "personal_contact")
+	private int phone;
+
+	@Column(name = "home_contact")
+	private int home_phone;
+
+	@Column(name = "created_on")
+	private String created_on;
+
+	@Column(name = "created_by")
+	private String created_by;
+
+	public StudentInfo() {
+
+	}
+
+	public StudentInfo(int stdId, int regId, int instituteId, String firstName, String lastName, String regDate,
+			String dateOfBirth, int age, String gender, int nid, String occupation, String email, int photo,
+			String pre_street, String pre_po, String pre_upa, String pre_dis, String pre_div, String per_street,
+			String per_po, String per_upa, String per_dis, String per_div, int phone, int home_phone, String created_on,
+			String created_by) {
+		this.stdId = stdId;
+		this.regId = regId;
+		this.instituteId = instituteId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.regDate = regDate;
+		this.dateOfBirth = dateOfBirth;
+		this.age = age;
+		this.gender = gender;
+		this.nid = nid;
+		this.occupation = occupation;
+		this.email = email;
+		this.photo = photo;
+		this.pre_street = pre_street;
+		this.pre_po = pre_po;
+		this.pre_upa = pre_upa;
+		this.pre_dis = pre_dis;
+		this.pre_div = pre_div;
+		this.per_street = per_street;
+		this.per_po = per_po;
+		this.per_upa = per_upa;
+		this.per_dis = per_dis;
+		this.per_div = per_div;
+		this.phone = phone;
+		this.home_phone = home_phone;
+		this.created_on = created_on;
+		this.created_by = created_by;
+	}
+
+	public StudentInfo(int regId, int instituteId, String firstName, String lastName, String regDate,
+			String dateOfBirth, int age, String gender, int nid, String occupation, String email, int photo,
+			String pre_street, String pre_po, String pre_upa, String pre_dis, String pre_div, String per_street,
+			String per_po, String per_upa, String per_dis, String per_div, int phone, int home_phone, String created_on,
+			String created_by) {
+		this.regId = regId;
+		this.instituteId = instituteId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.regDate = regDate;
+		this.dateOfBirth = dateOfBirth;
+		this.age = age;
+		this.gender = gender;
+		this.nid = nid;
+		this.occupation = occupation;
+		this.email = email;
+		this.photo = photo;
+		this.pre_street = pre_street;
+		this.pre_po = pre_po;
+		this.pre_upa = pre_upa;
+		this.pre_dis = pre_dis;
+		this.pre_div = pre_div;
+		this.per_street = per_street;
+		this.per_po = per_po;
+		this.per_upa = per_upa;
+		this.per_dis = per_dis;
+		this.per_div = per_div;
+		this.phone = phone;
+		this.home_phone = home_phone;
+		this.created_on = created_on;
+		this.created_by = created_by;
+	}
+
+	public int getStdId() {
+		return stdId;
+	}
+
+	public void setStdId(int stdId) {
+		this.stdId = stdId;
+	}
+
+	public int getRegId() {
+		return regId;
+	}
+
+	public void setRegId(int regId) {
+		this.regId = regId;
+	}
+
+	public int getInstituteId() {
+		return instituteId;
+	}
+
+	public void setInstituteId(int instituteId) {
+		this.instituteId = instituteId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getRegDate() {
+		return regDate;
+	}
+
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public int getNid() {
+		return nid;
+	}
+
+	public void setNid(int nid) {
+		this.nid = nid;
+	}
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public int getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(int photo) {
+		this.photo = photo;
+	}
+
+	public String getPre_street() {
+		return pre_street;
+	}
+
+	public void setPre_street(String pre_street) {
+		this.pre_street = pre_street;
+	}
+
+	public String getPre_po() {
+		return pre_po;
+	}
+
+	public void setPre_po(String pre_po) {
+		this.pre_po = pre_po;
+	}
+
+	public String getPre_upa() {
+		return pre_upa;
+	}
+
+	public void setPre_upa(String pre_upa) {
+		this.pre_upa = pre_upa;
+	}
+
+	public String getPre_dis() {
+		return pre_dis;
+	}
+
+	public void setPre_dis(String pre_dis) {
+		this.pre_dis = pre_dis;
+	}
+
+	public String getPre_div() {
+		return pre_div;
+	}
+
+	public void setPre_div(String pre_div) {
+		this.pre_div = pre_div;
+	}
+
+	public String getPer_street() {
+		return per_street;
+	}
+
+	public void setPer_street(String per_street) {
+		this.per_street = per_street;
+	}
+
+	public String getPer_po() {
+		return per_po;
+	}
+
+	public void setPer_po(String per_po) {
+		this.per_po = per_po;
+	}
+
+	public String getPer_upa() {
+		return per_upa;
+	}
+
+	public void setPer_upa(String per_upa) {
+		this.per_upa = per_upa;
+	}
+
+	public String getPer_dis() {
+		return per_dis;
+	}
+
+	public void setPer_dis(String per_dis) {
+		this.per_dis = per_dis;
+	}
+
+	public String getPer_div() {
+		return per_div;
+	}
+
+	public void setPer_div(String per_div) {
+		this.per_div = per_div;
+	}
+
+	public int getPhone() {
+		return phone;
+	}
+
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}
+
+	public int getHome_phone() {
+		return home_phone;
+	}
+
+	public void setHome_phone(int home_phone) {
+		this.home_phone = home_phone;
+	}
+
+	public String getCreated_on() {
+		return created_on;
+	}
+
+	public void setCreated_on(String created_on) {
+		this.created_on = created_on;
+	}
+
+	public String getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(String created_by) {
+		this.created_by = created_by;
+	}
+}

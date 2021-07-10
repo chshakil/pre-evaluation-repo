@@ -1,0 +1,22 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Academic;
+import com.example.demo.model.repository.service.AcademicService;
+
+@RestController
+public class AcademicController {
+
+	@Autowired
+	private AcademicService service;
+
+	@PostMapping("/addAcademic")
+	public Academic addAcademic(@RequestBody Academic academic) {
+		return service.saveAcademic(academic);
+	}
+
+}

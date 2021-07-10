@@ -1,0 +1,77 @@
+package com.example.demo.model.repository.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.StudentInfo;
+import com.example.demo.model.repository.StudentRepository;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	private StudentRepository repository;
+
+	public StudentInfo saveStudentInfo(StudentInfo sInfo) {
+		return repository.save(sInfo);
+	}
+
+	public List<StudentInfo> saveStudentInfos(List<StudentInfo> sInfo) {
+		return repository.saveAll(sInfo);
+	}
+
+	public List<StudentInfo> getStudentInfo() {
+		return repository.findAll();
+	}
+
+	public StudentInfo getStudentInfoById(int id) {
+		return repository.findById(id).orElse(null);
+	}
+
+	public String deleteStudentById(int id) {
+		repository.deleteById(id);
+		return "student info removed !!" + id;
+	}
+
+	public void deletedAll(StudentInfo studentInfo) {
+		repository.delete(studentInfo);
+	}
+
+	public StudentInfo updateStudentInfo(StudentInfo sInfo) {
+		StudentInfo existingInfo = repository.findById(sInfo.getStdId()).orElse(null);
+		existingInfo.getRegId();
+		existingInfo.getInstituteId();
+		existingInfo.getFirstName();
+		existingInfo.getLastName();
+		existingInfo.getRegDate();
+		existingInfo.getDateOfBirth();
+		existingInfo.getAge();
+		existingInfo.getGender();
+		existingInfo.getNid();
+		existingInfo.getOccupation();
+		existingInfo.getEmail();
+		existingInfo.getPhoto();
+		existingInfo.getPre_street();
+		existingInfo.getPre_po();
+		existingInfo.getPre_upa();
+		existingInfo.getPre_dis();
+		existingInfo.getPre_div();
+		existingInfo.getPer_street();
+		existingInfo.getPer_po();
+		existingInfo.getPer_upa();
+		existingInfo.getPer_dis();
+		existingInfo.getPer_div();
+		existingInfo.getPhone();
+		existingInfo.getHome_phone();
+		existingInfo.getCreated_on();
+		existingInfo.getCreated_by();
+		return repository.save(existingInfo);
+	}
+
+	public void updateById(StudentInfo sInfo, int id) {
+		repository.save(sInfo);
+	}
+
+}
