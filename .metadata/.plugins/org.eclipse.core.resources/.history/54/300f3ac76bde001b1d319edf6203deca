@@ -1,9 +1,0 @@
-package com.example.pre.evaluation.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.example.pre.evaluation.model.Academic;
-
-public interface AcademicRepository extends JpaRepository<Academic, Integer> {
-
-}

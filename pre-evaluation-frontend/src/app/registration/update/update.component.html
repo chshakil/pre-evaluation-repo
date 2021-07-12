@@ -1,8 +1,8 @@
 <div class="col-md-12 form_header">
-    <h3>Student Registration</h3>
+    <h3>Edit Registration</h3>
 </div>
 <div class="col-md-12 form_body">
-    <form (ngSubmit)="register()">
+    <form (ngSubmit)="updateStudent()">
         <div class="form-group row">
             <label for="regId" class="col-sm-2 col-form-label">Registration Id</label>
             <div class="col-sm-3">
@@ -33,12 +33,12 @@
         <div class="form-group row">
             <label for="regDate" class="col-sm-2 col-form-label">Registration Date</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="regDate" placeholder="dd.MM.yyyy"
+                <input type="text" class="form-control" id="regDate" placeholder="01.01.2015"
                     [(ngModel)]="student.regDate" name="regDate">
             </div><br>
             <label for="dateOfBirth" class="col-sm-2 col-form-label">Date Of Birth</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="dateOfBirth" placeholder="dd.MM.yyyy"
+                <input type="text" class="form-control" id="dateOfBirth" placeholder="12.01.2000"
                     [(ngModel)]="student.dateOfBirth" name="dateOfBirth">
             </div>
         </div><br>
@@ -69,21 +69,6 @@
                     [(ngModel)]="student.occupation" name="occupation">
             </div>
         </div><br>
-
-        <!-- <div class="form-group row">
-            <label for="gender" class="col-sm-2 col-form-label">Gender</label>
-            <div class="col-sm-3">
-                <div class="col-sm-7">
-                    <input type="text" class="form-control" id="gender" placeholder="Gender"
-                        [(ngModel)]="student.gender" name="gender">
-                </div>
-            </div>
-            <label for="occupation" class="col-sm-2 col-form-label">Occupation</label>
-            <div class="col-sm-3">
-                <input type="text" class="form-control" id="occupation" placeholder="Occupation"
-                    [(ngModel)]="student.occupation" name="occupation">
-            </div>
-        </div><br> -->
 
         <div class="form-group row">
             <label for="homeContact" class="col-sm-2 col-form-label">Home Contact</label>
@@ -184,96 +169,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let academicQual of student.academicQualList">
-                        <td><input type="text" class="form-control" id="degree"
-                                [(ngModel)]="academicQual.degree"  [ngModelOptions]="{standalone: true}" placeholder="Degree"></td>
-                        <td><input type="text" class="form-control" id="institute"
-                                [(ngModel)]="academicQual.institute"  [ngModelOptions]="{standalone: true}" placeholder="Institute">
+                    <tr *ngFor="let academicQual of student.academicQualList; let i = index">
+                        <!-- <td>
+                            <span>{{academicQual.degree}}</span>
+                        </td> -->
+                        <td>
+                            <input type="text" class="form-control" [(ngModel)]="academicQual.degree" [ngModelOptions]="{standalone: true}">
                         </td>
-                        <td><input type="number" class="form-control" id="completionYear"
-                                [(ngModel)]="academicQual.completionYear"  [ngModelOptions]="{standalone: true}"
-                                placeholder="Passing year"></td>
-                        <td><input type="number" class="form-control" id="grade"
-                                [(ngModel)]="academicQual.grade"  [ngModelOptions]="{standalone: true}" placeholder="5.00"></td>
+                        <td>
+                            <input type="text" class="form-control" id="institute" [(ngModel)]="academicQual.institute"  [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="completionYear" [(ngModel)]="academicQual.completionYear"  [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="grade" [(ngModel)]="academicQual.grade"  [ngModelOptions]="{standalone: true}">
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
 
-
-        <!-- <div class="form-group row">
-        <label for="degree" class="col-sm-2 col-form-label">Degree</label>
-        <div class="col-sm-3">
-            <input type="degree" class="form-control" id="degree" placeholder="Degree">
-        </div>
-        <label for="institute" class="col-sm-2 col-form-label">Institute</label>
-        <div class="col-sm-3">
-            <input type="institute" class="form-control" id="institute" placeholder="Institute">
-        </div>
-    </div><br>
-
-    <div class="form-group row">
-        <label for="completionyear" class="col-sm-2 col-form-label">Pass Year</label>
-        <div class="col-sm-3">
-            <input type="completionyear" class="form-control" id="completionyear" placeholder="Completion Year">
-        </div>
-        <label for="grade" class="col-sm-2 col-form-label">Grade</label>
-        <div class="col-sm-3">
-            <input type="grade" class="form-control" id="grade" placeholder="Grade">
-        </div>
-    </div><br>
-
-    <p><b>Academic Qualification - 2</b></p>
-
-    <div class="form-group row">
-        <label for="degree" class="col-sm-2 col-form-label">Degree</label>
-        <div class="col-sm-3">
-            <input type="degree" class="form-control" id="degree" placeholder="Degree">
-        </div>
-        <label for="institute" class="col-sm-2 col-form-label">Institute</label>
-        <div class="col-sm-3">
-            <input type="institute" class="form-control" id="institute" placeholder="Institute">
-        </div>
-    </div><br>
-
-    <div class="form-group row">
-        <label for="completionyear" class="col-sm-2 col-form-label">Pass Year</label>
-        <div class="col-sm-3">
-            <input type="completionyear" class="form-control" id="completionyear" placeholder="Completion Year">
-        </div>
-        <label for="grade" class="col-sm-2 col-form-label">Grade</label>
-        <div class="col-sm-3">
-            <input type="grade" class="form-control" id="grade" placeholder="Grade">
-        </div>
-    </div><br>
-
-    <p><b>Academic Qualification - 3</b></p>
-
-    <div class="form-group row">
-        <label for="degree" class="col-sm-2 col-form-label">Degree</label>
-        <div class="col-sm-3">
-            <input type="degree" class="form-control" id="degree" placeholder="Degree">
-        </div>
-        <label for="institute" class="col-sm-2 col-form-label">Institute</label>
-        <div class="col-sm-3">
-            <input type="institute" class="form-control" id="institute" placeholder="Institute">
-        </div>
-    </div><br>
-
-    <div class="form-group row">
-        <label for="completionyear" class="col-sm-2 col-form-label">Pass Year</label>
-        <div class="col-sm-3">
-            <input type="completionyear" class="form-control" id="completionyear" placeholder="Completion Year">
-        </div>
-        <label for="grade" class="col-sm-2 col-form-label">Grade</label>
-        <div class="col-sm-3">
-            <input type="grade" class="form-control" id="grade" placeholder="Grade">
-        </div>
-    </div><br> -->
-
-        <!-- (click)="register()" for button-->
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </div>

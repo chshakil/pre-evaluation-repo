@@ -7,4 +7,9 @@
 }
 .form_body{
     padding: 20px;
+    margin-top: 15px;
+}
+
+.data_table{
+    padding-left: 165px;
 }

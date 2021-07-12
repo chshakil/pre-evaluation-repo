@@ -1,6 +1,0 @@
-package com.example.pre.evaluation.model;
-
-public class Student {
-
-	private int id;
-}
