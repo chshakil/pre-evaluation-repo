@@ -1,0 +1,176 @@
+package com.example.pre.evaluation.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name = "address")
+public class Address {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	@Column(name = "preStreet")
+	private String preStreet;
+
+	@Column(name = "prePostOffice")
+	private String prePostOffice;
+
+	@Column(name = "preUpazila")
+	private String preUpazila;
+
+	@Column(name = "preDistrict")
+	private String preDistrict;
+
+	@Column(name = "preDivision")
+	private String preDivision;
+
+	@Column(name = "perStreet")
+	private String perStreet;
+
+	@Column(name = "perPostOffice")
+	private String perPostOffice;
+
+	@Column(name = "perUpazila")
+	private String perUpazila;
+
+	@Column(name = "perDistrict")
+	private String perDistrict;
+
+	@Column(name = "perDivision")
+	private String perDivision;
+
+	@JsonIgnore
+//	@OneToOne(cascade = {CascadeType.ALL})
+//  @JoinColumn(name="student_id")
+
+//	@OneToOne(mappedBy = "address")
+//	private Student student;
+
+	@Column(name = "studentId")
+	private Integer studentId;
+
+	public Address() {
+
+	}
+
+	public Address(String preStreet, String prePostOffice, String preUpazila, String preDistrict, String preDivision,
+			String perStreet, String perPostOffice, String perUpazila, String perDistrict, String perDivision,
+			Integer studentId) {
+		this.preStreet = preStreet;
+		this.prePostOffice = prePostOffice;
+		this.preUpazila = preUpazila;
+		this.preDistrict = preDistrict;
+		this.preDivision = preDivision;
+		this.perStreet = perStreet;
+		this.perPostOffice = perPostOffice;
+		this.perUpazila = perUpazila;
+		this.perDistrict = perDistrict;
+		this.perDivision = perDivision;
+		this.studentId = studentId;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPreStreet() {
+		return preStreet;
+	}
+
+	public void setPreStreet(String preStreet) {
+		this.preStreet = preStreet;
+	}
+
+	public String getPrePostOffice() {
+		return prePostOffice;
+	}
+
+	public void setPrePostOffice(String prePostOffice) {
+		this.prePostOffice = prePostOffice;
+	}
+
+	public String getPreUpazila() {
+		return preUpazila;
+	}
+
+	public void setPreUpazila(String preUpazila) {
+		this.preUpazila = preUpazila;
+	}
+
+	public String getPreDistrict() {
+		return preDistrict;
+	}
+
+	public void setPreDistrict(String preDistrict) {
+		this.preDistrict = preDistrict;
+	}
+
+	public String getPreDivision() {
+		return preDivision;
+	}
+
+	public void setPreDivision(String preDivision) {
+		this.preDivision = preDivision;
+	}
+
+	public String getPerStreet() {
+		return perStreet;
+	}
+
+	public void setPerStreet(String perStreet) {
+		this.perStreet = perStreet;
+	}
+
+	public String getPerPostOffice() {
+		return perPostOffice;
+	}
+
+	public void setPerPostOffice(String perPostOffice) {
+		this.perPostOffice = perPostOffice;
+	}
+
+	public String getPerUpazila() {
+		return perUpazila;
+	}
+
+	public void setPerUpazila(String perUpazila) {
+		this.perUpazila = perUpazila;
+	}
+
+	public String getPerDistrict() {
+		return perDistrict;
+	}
+
+	public void setPerDistrict(String perDistrict) {
+		this.perDistrict = perDistrict;
+	}
+
+	public String getPerDivision() {
+		return perDivision;
+	}
+
+	public void setPerDivision(String perDivision) {
+		this.perDivision = perDivision;
+	}
+
+	public Integer getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(Integer studentId) {
+		this.studentId = studentId;
+	}
+
+}

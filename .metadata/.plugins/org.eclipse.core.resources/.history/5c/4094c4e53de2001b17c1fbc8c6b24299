@@ -1,0 +1,50 @@
+package com.example.pre.evaluation.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.pre.evaluation.model.AcademicQual;
+import com.example.pre.evaluation.repository.AcademicRepository;
+
+@Service
+public class AcademicService {
+
+	@Autowired
+	private AcademicRepository _academicRepository;
+
+	public AcademicQual createAcademic(AcademicQual academic) {
+		return _academicRepository.save(academic);
+	}
+
+	public List<AcademicQual> creAcademics(List<AcademicQual> academicQualList) {
+		return _academicRepository.saveAll(academicQualList);
+	}
+
+	public List<AcademicQual> getAcademicList() {
+		return _academicRepository.findAll();
+	}
+
+	public AcademicQual getAcademicById(int id) {
+		return _academicRepository.findById(id).orElse(null);
+	}
+	
+	public String deleteAcademicById(int id) {
+		_academicRepository.deleteById(id);
+		return "academic removed !!" + id;
+	}
+
+	public void deleteAllAcademicList() {
+		_academicRepository.deleteAll();
+	}
+
+	public AcademicQual updateAcademic(AcademicQual academic) {
+		AcademicQual existingAcademic = _academicRepository.findById(academic.getId()).orElse(null);
+		existingAcademic.setDegree(academic.getDegree());
+		existingAcademic.setInstitute(academic.getInstitute());
+		existingAcademic.setCompletion_year(academic.getCompletion_year());
+		existingAcademic.setGrade(academic.getGrade());
+		return _academicRepository.save(existingAcademic);
+	}
+}

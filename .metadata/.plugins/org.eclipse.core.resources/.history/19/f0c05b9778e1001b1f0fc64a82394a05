@@ -1,0 +1,258 @@
+package com.example.pre.evaluation.model;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table(name = "student")
+public class Student {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	@NotNull
+	@Column(name = "reg_id")
+	private String regId;
+
+	@Column(name = "institution_id")
+	private String institutionId;
+
+	@Column(name = "first_name")
+	private String first_name;
+
+	@Column(name = "last_name")
+	private String last_name;
+
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "reg_date")
+	private String reg_date;
+
+	@Column(name = "date_of_birth")
+	private String date_of_birth;
+
+	@Column(name = "age")
+	private int age;
+
+	@Column(name = "gender")
+	private String gender;
+
+	@Column(name = "nid")
+	private Long nid;
+
+	@OneToMany(mappedBy = "student")
+	private List<AcademicQual> academicQualList;
+
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "student_id", referencedColumnName = "id")
+	@Transient
+	private Address address;
+
+	@Column(name = "occupation")
+	private String occupation;
+
+	@Column(name = "home_cotact")
+	private String home_contact;
+
+	@Column(name = "std_contact")
+	private String std_contact;
+
+	@Column(name = "photo")
+	private String photo;
+
+	@Column(name = "created_on")
+	private String created_on;
+
+	@Column(name = "created_by")
+	private String created_by;
+
+	public Student() {
+
+	}
+
+	public Student(String reg_id, String institution_id, String first_name, String last_name, String email, String reg_date,
+			String date_of_birth, int age, String gender, Long nid, String occupation, String home_contact, String std_contact,
+			String photo, String created_on, String created_by) {
+		this.regId = reg_id;
+		this.institutionId = institution_id;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.email = email;
+		this.reg_date = reg_date;
+		this.date_of_birth = date_of_birth;
+		this.age = age;
+		this.gender = gender;
+		this.nid = nid;
+		this.occupation = occupation;
+		this.home_contact = home_contact;
+		this.std_contact = std_contact;
+		this.photo = photo;
+		this.created_on = created_on;
+		this.created_by = created_by;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public List<AcademicQual> getAcademicQualList() {
+		return academicQualList;
+	}
+
+	public void setAcademicQualList(List<AcademicQual> academicQualList) {
+		this.academicQualList = academicQualList;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getReg_id() {
+		return regId;
+	}
+
+	public void setReg_id(String reg_id) {
+		this.regId = reg_id;
+	}
+
+	public String getInstitution_id() {
+		return institutionId;
+	}
+
+	public void setInstitution_id(String institution_id) {
+		this.institutionId = institution_id;
+	}
+
+	public String getFirst_name() {
+		return first_name;
+	}
+
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getReg_date() {
+		return reg_date;
+	}
+
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
+	}
+
+	public String getDate_of_birth() {
+		return date_of_birth;
+	}
+
+	public void setDate_of_birth(String date_of_birth) {
+		this.date_of_birth = date_of_birth;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public Long getNid() {
+		return nid;
+	}
+
+	public void setNid(Long nid) {
+		this.nid = nid;
+	}
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	public String getHome_contact() {
+		return home_contact;
+	}
+
+	public void setHome_contact(String home_contact) {
+		this.home_contact = home_contact;
+	}
+
+	public String getStd_contact() {
+		return std_contact;
+	}
+
+	public void setStd_contact(String std_contact) {
+		this.std_contact = std_contact;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getCreated_on() {
+		return created_on;
+	}
+
+	public void setCreated_on(String created_on) {
+		this.created_on = created_on;
+	}
+
+	public String getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(String created_by) {
+		this.created_by = created_by;
+	}
+
+}

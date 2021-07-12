@@ -1,0 +1,60 @@
+package com.example.pre.evaluation.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.pre.evaluation.model.Academic;
+import com.example.pre.evaluation.service.AcademicService;
+
+@RestController
+@RequestMapping("/api")
+public class AcademicController {
+
+	@Autowired
+	private AcademicService service;
+
+	@PostMapping("/addAcademic")
+	public Academic saveAcademic(@RequestBody Academic academic) {
+		return service.createAcademic(academic);
+	}
+
+	@PostMapping("/addAcademics")
+	public List<Academic> saveAcademics(@RequestBody List<Academic> aList) {
+		return service.creAcademics(aList);
+	}
+
+	@GetMapping("/getAcademics")
+	public List<Academic> getAllAcademics() {
+		return service.getAcademics();
+	}
+
+	@GetMapping("/academicById/{id}")
+	public Academic findAcademicById(@PathVariable int id) {
+		return service.getAcademicById(id);
+	}
+
+	@DeleteMapping("/deleteAcademic/{id}")
+	public String deleteAcademicById(@PathVariable int id) {
+		return service.deleteAcademicById(id);
+	}
+
+	@PutMapping("/updateAcademic")
+	public Academic upateAcademic(@RequestBody Academic academic) {
+		return service.updateAcademic(academic);
+	}
+
+	@DeleteMapping("/deleteAllAcademic")
+	public String deleteAll() {
+		service.deleteAllAcademic();
+		return "Successfully delete all entities";
+	}
+}
