@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+.form_header{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid;
+}
+.form_body{
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.data_table{
+    padding-left: 165px;
+}

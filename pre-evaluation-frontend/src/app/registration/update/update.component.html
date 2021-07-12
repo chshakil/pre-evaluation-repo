@@ -1,0 +1,196 @@
+<div class="col-md-12 form_header">
+    <h3>Edit Registration</h3>
+</div>
+<div class="col-md-12 form_body">
+    <form (ngSubmit)="updateStudent()">
+        <div class="form-group row">
+            <label for="regId" class="col-sm-2 col-form-label">Registration Id</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="regId" placeholder="Registration Id"
+                    [(ngModel)]="student.regId" name="regId">
+            </div><br>
+
+            <label for="instituteId" class="col-sm-2 col-form-label">Institution Id</label>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" id="instituteId" placeholder="Institution Id"
+                    [(ngModel)]="student.institutionId" name="instituteId">
+            </div><br>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                    [(ngModel)]="student.firstName" name="firstName">
+            </div><br>
+            <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                    [(ngModel)]="student.lastName" name="lastName">
+            </div><br>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="regDate" class="col-sm-2 col-form-label">Registration Date</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="regDate" placeholder="01.01.2015"
+                    [(ngModel)]="student.regDate" name="regDate">
+            </div><br>
+            <label for="dateOfBirth" class="col-sm-2 col-form-label">Date Of Birth</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="dateOfBirth" placeholder="12.01.2000"
+                    [(ngModel)]="student.dateOfBirth" name="dateOfBirth">
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="email" placeholder="Email" [(ngModel)]="student.email"
+                    name="email">
+            </div>
+            <label for="nid" class="col-sm-2 col-form-label">NID</label>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" id="nid" placeholder="NID" [(ngModel)]="student.nid"
+                    name="nid">
+            </div>
+        </div><br>
+
+
+        <div class="form-group row">
+            <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="gender" placeholder="gender" [(ngModel)]="student.gender"
+                    name="gender">
+            </div>
+            <label for="occupation" class="col-sm-2 col-form-label">Occupation</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="occupation" placeholder="Occupation"
+                    [(ngModel)]="student.occupation" name="occupation">
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="homeContact" class="col-sm-2 col-form-label">Home Contact</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="homeContact" placeholder="Home Contact"
+                    [(ngModel)]="student.homeContact" name="homeContact">
+            </div>
+            <label for="stdContact" class="col-sm-2 col-form-label">Personal Contact</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="stdContact" placeholder="Personal Contact"
+                    [(ngModel)]="student.stdContact" name="stdContact">
+            </div>
+        </div><br>
+
+        <p><b>Present Address</b></p>
+
+        <div class="form-group row">
+            <label for="preStreet" class="col-sm-2 col-form-label">Street</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="preStreet" placeholder="Street"
+                    [(ngModel)]="student.address.preStreet" name="preStreet">
+            </div>
+            <label for="prePostOffice" class="col-sm-2 col-form-label">Post Office</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="prePostOffice" placeholder="Post Office"
+                    [(ngModel)]="student.address.prePostOffice" name="prePostOffice">
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="preUpazila" class="col-sm-2 col-form-label">Upazila</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="preUpazila" placeholder="Upazila"
+                    [(ngModel)]="student.address.preUpazila" name="preUpazila">
+            </div>
+            <label for="preDistrict" class="col-sm-2 col-form-label">District</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="preDistrict" placeholder="District"
+                    [(ngModel)]="student.address.preDistrict" name="preDistrict">
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="preDivision" class="col-sm-2 col-form-label">Division</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="preDivision" placeholder="Division"
+                    [(ngModel)]="student.address.preDivision" name="preDivision">
+            </div>
+        </div><br>
+
+        <p><b>Permanent Address</b></p>
+
+        <div class="form-group row">
+            <label for="perStreet" class="col-sm-2 col-form-label">Street</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="perStreet" placeholder="Street"
+                    [(ngModel)]="student.address.perStreet" name="perStreet">
+            </div>
+            <label for="perPostOffice" class="col-sm-2 col-form-label">Post Office</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="perPostOffice" placeholder="Post Office"
+                    [(ngModel)]="student.address.perPostOffice" name="perPostOffice">
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="perUpazila" class="col-sm-2 col-form-label">Upazila</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="perUpazila" placeholder="Upazila"
+                    [(ngModel)]="student.address.perUpazila" name="perUpazila">
+            </div>
+            <label for="perDistrict" class="col-sm-2 col-form-label">District</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="perDistrict" placeholder="District"
+                    [(ngModel)]="student.address.perDistrict" name="perDistrict">
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="per_div" class="col-sm-2 col-form-label">Division</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="per_div" placeholder="Division"
+                    [(ngModel)]="student.address.perDivision" name="perDivision">
+            </div>
+        </div><br>
+        <p><b>Academic Qualification</b>
+            <button type="button" class="btn-sm btn-outline-success m-1" (click)="addAcademicQual()">Add</button>
+        </p>
+
+        <div class="form-group row">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Degree</th>
+                        <th class="col-md-3">Institute</th>
+                        <th class="col-md-3">Passing Year</th>
+                        <th class="col-md-3">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let academicQual of student.academicQualList; let i = index">
+                        <!-- <td>
+                            <span>{{academicQual.degree}}</span>
+                        </td> -->
+                        <td>
+                            <input type="text" class="form-control" [(ngModel)]="academicQual.degree" [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="institute" [(ngModel)]="academicQual.institute"  [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="completionYear" [(ngModel)]="academicQual.completionYear"  [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" id="grade" [(ngModel)]="academicQual.grade"  [ngModelOptions]="{standalone: true}">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>

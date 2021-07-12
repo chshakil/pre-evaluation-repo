@@ -1,0 +1,166 @@
+<div class="col-md-12 form_header">
+    <h3>Details of {{student.firstName}} {{student.lastName}}</h3>
+</div>
+<div class="col-md-12 form_body">
+    <form>
+        <div class="form-group row">
+            <label for="regId" class="col-sm-2 col-form-label">Registration Id</label>
+            <div class="col-sm-3">
+                <span>{{student.regId}}</span>
+            </div><br>
+
+            <label for="instituteId" class="col-sm-2 col-form-label">Institution Id</label>
+            <div class="col-sm-3">
+                <span>{{student.institutionId}}</span>
+            </div><br>
+        </div><br>
+
+        <!-- <div class="form-group row">
+            <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-3">
+                <span>{{student.firstName}}</span>
+            </div><br>
+            <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-3">
+                <span>{{student.lastName}}</span>
+            </div><br>
+        </div><br> -->
+
+        <div class="form-group row">
+            <label for="regDate" class="col-sm-2 col-form-label">Registration Date</label>
+            <div class="col-sm-3">
+                <span>{{student.regDate}}</span>
+            </div><br>
+            <label for="dateOfBirth" class="col-sm-2 col-form-label">Date Of Birth</label>
+            <div class="col-sm-3">
+                <span>{{student.dateOfBirth}}</span>
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-3">
+            </div>
+            <label for="nid" class="col-sm-2 col-form-label">NID</label>
+            <div class="col-sm-3">
+            </div>
+        </div><br>
+
+
+        <div class="form-group row">
+            <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-3">
+              
+            </div>
+            <label for="occupation" class="col-sm-2 col-form-label">Occupation</label>
+            <div class="col-sm-3">
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="homeContact" class="col-sm-2 col-form-label">Home Contact</label>
+            <div class="col-sm-3">
+                <span>{{student.homeContact}}</span>
+            </div>
+            <label for="stdContact" class="col-sm-2 col-form-label">Personal Contact</label>
+            <div class="col-sm-3">
+                <span>{{student.stdContact}}</span>
+            </div>
+        </div><br>
+
+        <p><b>Present Address</b></p>
+
+        <div class="form-group row">
+            <label for="preStreet" class="col-sm-2 col-form-label">Street</label>
+            <div class="col-sm-3">
+                <span>{{student.address.preStreet}}</span>
+            </div>
+            <label for="prePostOffice" class="col-sm-2 col-form-label">Post Office</label>
+            <div class="col-sm-3">
+                <span>{{student.address.prePostOffice}}</span>
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="preUpazila" class="col-sm-2 col-form-label">Upazila</label>
+            <div class="col-sm-3">
+                <span>{{student.address.preUpazila}}</span>
+            </div>
+            <label for="preDistrict" class="col-sm-2 col-form-label">District</label>
+            <div class="col-sm-3">
+                <span>{{student.address.preDistrict}}</span>
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="preDivision" class="col-sm-2 col-form-label">Division</label>
+            <div class="col-sm-3">
+                <span>{{student.address.preDivision}}</span>
+            </div>
+        </div><br>
+
+        <p><b>Permanent Address</b></p>
+
+        <div class="form-group row">
+            <label for="perStreet" class="col-sm-2 col-form-label">Street</label>
+            <div class="col-sm-3">
+                <span>{{student.address.perStreet}}</span>
+            </div>
+            <label for="perPostOffice" class="col-sm-2 col-form-label">Post Office</label>
+            <div class="col-sm-3">
+                <span>{{student.address.perPostOffice}}</span>
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="perUpazila" class="col-sm-2 col-form-label">Upazila</label>
+            <div class="col-sm-3">
+                <span>{{student.address.perUpazila}}</span>
+            </div>
+            <label for="perDistrict" class="col-sm-2 col-form-label">District</label>
+            <div class="col-sm-3">
+                <span>{{student.address.perDistrict}}</span>
+            </div>
+        </div><br>
+
+        <div class="form-group row">
+            <label for="per_div" class="col-sm-2 col-form-label">Division</label>
+            <div class="col-sm-3">
+                <span>{{student.address.perDivision}}</span>
+            </div>
+        </div><br>
+        <p><b>Academic Qualification</b>
+        </p>
+
+        <div class="form-group row">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Degree</th>
+                        <th class="col-md-3">Institute</th>
+                        <th class="col-md-3">Passing Year</th>
+                        <th class="col-md-3">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let academicQual of student.academicQualList; let i = index">
+                        <td>
+                          <span>{{academicQual.degree}}</span>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>
